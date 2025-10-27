@@ -12,8 +12,10 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.stream.Collectors;
 
-public class WebApiExRateProvider {
-    BigDecimal getWebExchangeRate(String currency) throws URISyntaxException, IOException {
+public class WebApiExRateProvider implements ExRateProvider {
+
+    @Override
+    public BigDecimal getExchangeRate(String currency) throws IOException, URISyntaxException {
         URL url = new URI("https://open.er-api.com/v6/latest/" + currency).toURL();
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
