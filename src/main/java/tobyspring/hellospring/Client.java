@@ -6,8 +6,7 @@ import java.net.URISyntaxException;
 
 public class Client {
     public static void main(String[] args) throws IOException, URISyntaxException {
-        PaymentService paymentService = new WebApiExRatePaymentService();
-        //PaymentService paymentService = new SimpleExRatePaymentService();
+        PaymentService paymentService = new PaymentService();
         Payment payment = paymentService.prepare(100L, "USD", BigDecimal.valueOf(50.7));
         System.out.println(payment);
     }
