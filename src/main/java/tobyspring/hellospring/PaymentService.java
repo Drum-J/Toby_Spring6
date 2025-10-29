@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 
-@Component
+//@Component
 public class PaymentService {
 
     private final ExRateProvider exRateProvider;
