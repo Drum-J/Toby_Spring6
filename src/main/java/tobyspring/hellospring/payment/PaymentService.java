@@ -1,7 +1,5 @@
 package tobyspring.hellospring.payment;
 
-import tobyspring.hellospring.exrate.ExRateProvider;
-
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URISyntaxException;
