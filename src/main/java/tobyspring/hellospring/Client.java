@@ -11,6 +11,14 @@ public class Client {
     public static void main(String[] args) throws IOException, URISyntaxException {
         BeanFactory beanFactory = new AnnotationConfigApplicationContext(ObjectFactory.class);
         PaymentService paymentService = beanFactory.getBean(PaymentService.class);
+        /*
+        PaymentService paymentService2 = beanFactory.getBean(PaymentService.class);
+
+        // 싱글톤 오브젝트 확인
+        System.out.println(paymentService);
+        System.out.println(paymentService2);
+        System.out.println(paymentService == paymentService2);
+        */
 
         Payment payment = paymentService.prepare(100L, "USD", BigDecimal.valueOf(50.7));
         System.out.println(payment);
