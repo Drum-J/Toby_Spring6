@@ -8,8 +8,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import tobyspring.hellospring.TestPaymentConfig;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.time.Clock;
 import java.time.LocalDateTime;
 
@@ -27,7 +25,7 @@ class PaymentServiceSpringTest {
 
     @Test
     @DisplayName("prepare 메소드가 요구사항 3가지를 잘 충족했는지 검증")
-    void convertedAmount() throws IOException, URISyntaxException {
+    void convertedAmount() {
         // exchangeRate: 1000
         Payment payment = paymentService.prepare(1L, "USD", TEN);
 
@@ -43,7 +41,7 @@ class PaymentServiceSpringTest {
     }
 
     @Test
-    void validUntil() throws Exception {
+    void validUntil() {
         // given
         Payment payment = paymentService.prepare(1L, "USD", TEN);
 

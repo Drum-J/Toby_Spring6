@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PaymentTest {
 
     @Test
-    void createPrepared() throws Exception {
+    void createPrepared() {
         //given
         Clock clock = Clock.fixed(Instant.now(), ZoneId.systemDefault());
         Payment payment = Payment.createPrepared(
@@ -26,7 +26,7 @@ public class PaymentTest {
     }
 
     @Test
-    void isValid() throws Exception {
+    void isValid() {
         //given
         Clock clock = Clock.fixed(Instant.now(), ZoneId.systemDefault());
         Payment payment = Payment.createPrepared(

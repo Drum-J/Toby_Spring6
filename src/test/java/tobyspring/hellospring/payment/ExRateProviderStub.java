@@ -1,8 +1,6 @@
 package tobyspring.hellospring.payment;
 
-import java.io.IOException;
 import java.math.BigDecimal;
-import java.net.URISyntaxException;
 
 public class ExRateProviderStub implements ExRateProvider {
 
@@ -21,7 +19,7 @@ public class ExRateProviderStub implements ExRateProvider {
     }
 
     @Override
-    public BigDecimal getExchangeRate(String currency) throws URISyntaxException, IOException {
+    public BigDecimal getExchangeRate(String currency) {
         return exchangeRate;
     }
 }
