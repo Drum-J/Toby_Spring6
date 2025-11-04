@@ -1,9 +1,8 @@
 package tobyspring.hellospring;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import tobyspring.hellospring.data.OrderRepository;
 import tobyspring.hellospring.order.Order;
 
 import java.math.BigDecimal;
@@ -11,23 +10,11 @@ import java.math.BigDecimal;
 public class DataClient {
     public static void main(String[] args) {
         BeanFactory beanFactory = new AnnotationConfigApplicationContext(DataConfig.class);
-        EntityManagerFactory emf = beanFactory.getBean(EntityManagerFactory.class);
+        OrderRepository repository = beanFactory.getBean(OrderRepository.class);
 
-        // em
-        EntityManager em = emf.createEntityManager();
-
-        // transaction start
-        em.getTransaction().begin();
-
-        // em.persist
         Order order = new Order("100", BigDecimal.TEN);
-        em.persist(order);
+        repository.save(order);
 
         System.out.println(order);
-
-        // transaction end
-        em.getTransaction().commit();
-
-        em.close();
     }
 }
