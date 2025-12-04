@@ -1,6 +1,5 @@
 package tobyspring.hellospring.order;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +7,6 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.yaml.snakeyaml.constructor.DuplicateKeyException;
 import tobyspring.hellospring.OrderConfig;
 
 import javax.sql.DataSource;
